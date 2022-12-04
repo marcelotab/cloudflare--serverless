@@ -1,0 +1,29 @@
+service: testing
+
+frameworkVersion: '3'
+
+provider:
+  name: cloudflare
+  config:
+    accountId: ${env:CLOUDFLARE_ACCOUNT_ID}
+    zoneId: ${env:CLOUDFLARE_ZONE_ID}
+
+plugins:
+  - serverless-cloudflare-workers
+
+functions:
+  hello:
+    name: hello
+    environment:
+      CLOUDINARY_URL: ${env:CLOUDINARY_URL}
+      CLOUDINARY_API_KEY: ${env:CLOUDINARY_API_KEY}
+      CLOUDINARY_API_SECRET: ${env:CLOUDINARY_API_SECRET}
+
+    script: src/helloWorld # there must be a file called helloWorld.js
+    events:
+      - http:
+          url: ejemplo.com/hello/*
+          method: GET
+          headers:
+            foo: bar
+            x-client-data: value

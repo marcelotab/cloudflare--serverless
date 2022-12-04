@@ -1,0 +1,23 @@
+{
+  "name": "cloudflare-serverless",
+  "version": "1.0.0",
+  "description": "Serverless framework with cloudflare provider",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run dev"
+  },
+  "keywords": [
+    "cloudflare",
+    "node js",
+    "serverless"
+  ],
+  "author": "marcelo taborda",
+  "license": "ISC",
+  "dependencies": {
+    "cloudinary": "^1.32.0",
+    "serverless": "^3.25.1"
+  },
+  "devDependencies": {
+    "serverless-cloudflare-workers": "1.2.0"
+  }
+}
